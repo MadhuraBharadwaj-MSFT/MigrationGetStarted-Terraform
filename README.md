@@ -1,4 +1,4 @@
----
+<!---
 description: This Terraform sample deploys the resources to create a function app in Azure Functions that runs in a Flex Consumption plan.
 page_type: sample
 products:
@@ -8,7 +8,7 @@ urlFragment: terraform-based-deployment
 languages:
 - terraform
 - javascript
----
+--->
 
 # Flex Consumption plan - Terraform sample | Azure Functions
 
