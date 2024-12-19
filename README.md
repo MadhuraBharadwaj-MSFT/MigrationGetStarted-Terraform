@@ -12,7 +12,7 @@ languages:
 
 # Flex Consumption plan - Terraform sample | Azure Functions
 
-This Terraform sample deploys deploys a function app and other required resources in a Flex Consumption plan. When used in an Terraform-based deployment, this Terraform file is used to creates these Azure components:
+This Terraform sample deploys deploys a function app and other required resources in a Flex Consumption plan. When used in an Terraform-based deployment, this Terraform file is used to create these Azure components:
 
 | Component | Description |
 | ---- | ---- |
@@ -22,9 +22,9 @@ This Terraform sample deploys deploys a function app and other required resource
 | **Log Analytics Workspace** | This is the workspace used by Application Insights for the app telemetry.|
 | **Storage Account** | This is the Microsoft Azure storage account that [Azure Functions requires](https://learn.microsoft.com/azure/azure-functions/storage-considerations) when you create a function app instance. A blob container called `deploymentpackage` is also created in this storage account to be configured as the location for when you deploy to this Flex Consumption app.|
 
-## How to deploy it?
+## How to deploy?
 
-Use these steps to deploy using the Terraform file.
+Use these steps to provision resources using the Terraform file.
 
 ### 1. Modify the parameters file
 
@@ -32,6 +32,7 @@ Create a copy and modify the parameters file `variables.tfvars` to specify the v
 
 | Parameter | Description |
 | ---- | ---- |
+| **subscription_id** | the name of the resource group to be created for your app.|
 | **resourceGroupName** | the name of the resource group to be created for your app.|
 | **location** | the location where the assets will be created. You can find the supported regions with the `az functionapp list-flexconsumption-locations` command of the Azure CLI.|
 | **applicationInsightsName** | a unique name for the Application Insights instance.|
@@ -42,7 +43,7 @@ Create a copy and modify the parameters file `variables.tfvars` to specify the v
 | **functionAppRuntime** | The runtime of the Flex Consumption app that you plan to deploy. One of the following values: `dotnet-isolated`, `python`, `java`, `node`, `powershell`.|
 | **functionAppRuntimeVersion** | The runtime and version of the Flex Consumption app that you plan to deploy One of the following values: `3.10`, `3.11`, `7.4`, `8.0`, `10`, `11`, `17`, `20`.|
 
-Here is an example `variables.tfvars` that you can modify:
+Here is an example `variables.tfvars`. Modify the resorce names to suit your naming conventions:
 
 ```terraform
 subscription_id = ""
